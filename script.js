@@ -73,6 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function activateMemoryMenu() {
         isActivated = true;
         
+        // Скрываем подсказку про красное сердечко
+        const redHeartHint = document.querySelector('.red-heart-hint');
+        if (redHeartHint) {
+            redHeartHint.classList.add('hidden');
+        }
+        
         // Анимация главного сердца - оно исчезает
         mainHeart.classList.add('activated');
         
