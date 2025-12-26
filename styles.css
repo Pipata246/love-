@@ -425,6 +425,15 @@ body {
     top: 95px;
 }
 
+/* На мобильных убираем абсолютное позиционирование */
+@media (max-width: 1024px) {
+    .right-section {
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+    }
+}
+
 /* Список итогов года */
 .year-summary {
     background: rgba(255, 255, 255, 0.2);
@@ -812,7 +821,12 @@ body {
     }
     
     .right-section {
-        flex: 0 0 220px;
+        right: 5px;
+        width: 260px;
+    }
+    
+    .year-summary, .mini-player {
+        width: 260px;
     }
     
     .main-heart {
@@ -852,21 +866,29 @@ body {
     body {
         overflow-y: auto;
         height: auto;
+        min-height: 100vh;
     }
     
     .main-layout {
         flex-direction: column;
         height: auto;
+        min-height: calc(100vh - 90px);
         padding: 10px;
-        gap: 20px;
+        gap: 30px;
+        max-height: none;
     }
     
     .left-section {
-        min-height: 450px;
+        min-height: 500px;
         order: 1;
+        margin-right: 0;
+        width: 100%;
     }
     
     .right-section {
+        position: relative;
+        right: auto;
+        top: auto;
         flex: none;
         width: 100%;
         max-width: 600px;
@@ -874,10 +896,13 @@ body {
         flex-direction: row;
         gap: 20px;
         order: 2;
+        height: auto;
+        max-height: none;
     }
     
     .year-summary, .mini-player {
         flex: 1;
+        width: auto;
     }
     
     .main-heart {
@@ -894,17 +919,17 @@ body {
     }
     
     .memory-buttons {
-        width: 260px;
-        height: 260px;
+        width: 360px;
+        height: 360px;
     }
     
     .memory-btn {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
     
     .memory-icon {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
     
     .memory-text {
@@ -915,12 +940,31 @@ body {
     .deco-element:nth-child(even) {
         display: none;
     }
+    
+    .red-heart-hint {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 10px auto 20px auto;
+        width: fit-content;
+    }
 }
 
 /* Мобильные устройства (480-768px) */
 @media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .header {
+        padding: 10px 0;
+    }
+    
     .header h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+        margin-bottom: 5px;
     }
     
     .subtitle {
@@ -928,35 +972,57 @@ body {
     }
     
     .main-layout {
-        padding: 8px;
-        gap: 15px;
+        flex-direction: column;
+        height: auto;
+        min-height: calc(100vh - 80px);
+        padding: 10px;
+        gap: 20px;
+        max-height: none;
     }
     
     .left-section {
-        min-height: 350px;
+        min-height: 400px;
+        order: 1;
+        margin-right: 0;
+        width: 100%;
     }
     
     .right-section {
+        position: relative;
+        right: auto;
+        top: auto;
         flex-direction: column;
         max-width: 100%;
+        width: 100%;
+        margin: 0;
+        order: 2;
+        gap: 15px;
+        height: auto;
+        max-height: none;
+    }
+    
+    .year-summary, .mini-player {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
     }
     
     .main-heart {
-        width: 140px;
-        height: 140px;
+        width: 120px;
+        height: 120px;
     }
     
     .heart-icon {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     
     .heart-text {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     .memory-buttons {
-        width: 240px;
-        height: 240px;
+        width: 280px;
+        height: 280px;
     }
     
     .memory-btn {
@@ -965,7 +1031,7 @@ body {
     }
     
     .memory-icon {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
     
     .memory-text {
@@ -974,11 +1040,160 @@ body {
     }
     
     .year-summary {
+        padding: 12px;
+    }
+    
+    .year-summary h2 {
+        font-size: 1rem;
+    }
+    
+    .new-year-message p {
+        font-size: 12px;
+    }
+    
+    .year-summary li {
+        font-size: 10px;
+    }
+    
+    .mini-player {
+        padding: 10px;
+    }
+    
+    .mini-player h3 {
+        font-size: 0.9rem;
+    }
+    
+    .load-btn {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+    
+    .romantic-phrase {
+        bottom: 20px;
+        font-size: 0.9rem;
+        max-width: 300px;
+        padding: 10px 15px;
+    }
+    
+    /* Убираем все декоративные элементы на мобильных */
+    .decorative-elements,
+    .romantic-quotes,
+    .rose-petals,
+    .side-hearts {
+        display: none !important;
+    }
+    
+    .floating-elements {
+        display: none !important;
+    }
+    
+    .corner-decoration {
+        display: none !important;
+    }
+    
+    .christmas-tree {
+        display: none !important;
+    }
+    
+    .red-heart-hint {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 10px auto 15px auto;
+        width: fit-content;
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+    
+    .red-heart-hint p {
+        font-size: 12px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 15px;
+        height: 90vh;
+        max-height: 90vh;
+    }
+}
+
+/* Маленькие мобильные (320-480px) */
+@media (max-width: 480px) {
+    body {
+        overflow-y: auto;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .header {
+        padding: 8px 0;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 3px;
+    }
+    
+    .subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .main-layout {
+        padding: 8px;
+        gap: 15px;
+        min-height: calc(100vh - 70px);
+    }
+    
+    .left-section {
+        min-height: 320px;
+    }
+    
+    .right-section {
+        gap: 12px;
+    }
+    
+    .main-heart {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .heart-icon {
+        font-size: 1.8rem;
+    }
+    
+    .heart-text {
+        font-size: 0.7rem;
+    }
+    
+    .memory-buttons {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .memory-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .memory-icon {
+        font-size: 1rem;
+    }
+    
+    .memory-text {
+        font-size: 0.4rem;
+    }
+    
+    .year-summary {
         padding: 10px;
     }
     
     .year-summary h2 {
         font-size: 0.9rem;
+    }
+    
+    .new-year-message p {
+        font-size: 11px;
     }
     
     .year-summary li {
@@ -999,121 +1214,54 @@ body {
     }
     
     .romantic-phrase {
-        bottom: 20px;
-        font-size: 0.9rem;
-        max-width: 280px;
-        padding: 10px 15px;
-    }
-    
-    /* Скрываем большинство декораций на мобильных */
-    .decorative-elements {
-        display: none;
-    }
-    
-    .romantic-quotes {
-        display: none;
-    }
-    
-    .rose-petals {
-        display: none;
-    }
-    
-    .modal-content {
-        width: 95%;
-        margin: 5% auto;
-        padding: 15px;
-    }
-}
-
-/* Маленькие мобильные (320-480px) */
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 1.4rem;
-    }
-    
-    .subtitle {
-        font-size: 0.8rem;
-    }
-    
-    .left-section {
-        min-height: 280px;
-    }
-    
-    .main-heart {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .heart-icon {
-        font-size: 2rem;
-    }
-    
-    .heart-text {
-        font-size: 0.8rem;
-    }
-    
-    .memory-buttons {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .memory-btn {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .memory-icon {
-        font-size: 0.9rem;
-    }
-    
-    .memory-text {
-        font-size: 0.45rem;
-    }
-    
-    .year-summary {
-        padding: 8px;
-    }
-    
-    .year-summary h2 {
-        font-size: 0.8rem;
-    }
-    
-    .year-summary li {
-        font-size: 8px;
-    }
-    
-    .mini-player {
-        padding: 6px;
-    }
-    
-    .mini-player h3 {
-        font-size: 0.7rem;
-    }
-    
-    .load-btn {
-        font-size: 8px;
-        padding: 4px 8px;
-    }
-    
-    .romantic-phrase {
         bottom: 15px;
         font-size: 0.8rem;
-        max-width: 220px;
+        max-width: 250px;
         padding: 8px 12px;
     }
     
-    .side-hearts {
-        font-size: 12px;
+    .red-heart-hint {
+        font-size: 11px;
+        padding: 6px 12px;
+        margin: 8px auto 12px auto;
     }
     
-    .corner-decoration {
-        font-size: 20px;
+    .red-heart-hint p {
+        font-size: 11px;
     }
     
     .modal-content {
         width: 98%;
         margin: 2% auto;
         padding: 12px;
+        height: 95vh;
+        max-height: 95vh;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    
+    .modal-content p {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    .gallery-controls {
+        padding: 10px;
+        gap: 20px;
+    }
+    
+    .gallery-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .gallery-counter {
+        font-size: 14px;
+        min-width: 60px;
     }
 }
 
