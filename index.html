@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наш зимний год ❄️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Заголовок -->
+    <div class="header">
+        <h1>Наш зимний год ❄️</h1>
+        <p class="subtitle">Нажми на снежинку, чтобы открыть наши моменты</p>
+    </div>
+
+    <!-- Подсказка про красное сердечко -->
+    <div class="red-heart-hint">
+        <p>❤️ Красное сердечко открой в последнюю очередь ❤️</p>
+    </div>
+
+    <!-- Летающие элементы -->
+    <div class="floating-elements">
+        <div class="floating-heart">❄️</div>
+        <div class="floating-heart">⭐</div>
+        <div class="floating-heart">✨</div>
+        <div class="floating-heart">🌟</div>
+        <div class="floating-heart">💫</div>
+        <div class="floating-heart">🔮</div>
+        <div class="floating-heart">🎄</div>
+        <div class="floating-heart">🎁</div>
+        <div class="floating-heart">🕊️</div>
+        <div class="floating-heart">🌨️</div>
+        <div class="floating-heart">☃️</div>
+        <div class="floating-heart">🎊</div>
+    </div>
+
+    <!-- Дополнительные декоративные элементы ПО КРАЯМ ЭКРАНА -->
+    <div class="decorative-elements">
+        <!-- Левая сторона -->
+        <div class="deco-element deco-1">🎄</div>
+        <div class="deco-element deco-2">🎁</div>
+        <div class="deco-element deco-3">🎀</div>
+        <div class="deco-element deco-4">✨</div>
+        <div class="deco-element deco-5">❄️</div>
+        <div class="deco-element deco-6">🌙</div>
+        <div class="deco-element deco-7">⭐</div>
+        <div class="deco-element deco-8">🌨️</div>
+        
+        <!-- Правая сторона -->
+        <div class="deco-element deco-9">🕊️</div>
+        <div class="deco-element deco-10">🎵</div>
+        <div class="deco-element deco-11">💌</div>
+        <div class="deco-element deco-12">🔮</div>
+        <div class="deco-element deco-13">🌟</div>
+        <div class="deco-element deco-14">💫</div>
+        <div class="deco-element deco-15">🎊</div>
+        <div class="deco-element deco-16">☃️</div>
+    </div>
+
+    <!-- Романтические цитаты по краям -->
+    <div class="romantic-quotes">
+        <div class="quote quote-1">"Любовь - это когда счастье другого важнее собственного"</div>
+        <div class="quote quote-2">"В твоих глазах я нашла свой дом"</div>
+        <div class="quote quote-3">"Ты мое солнце в дождливый день"</div>
+        <div class="quote quote-4">"С тобой каждый день как праздник"</div>
+    </div>
+
+    <!-- Декоративные элементы в углах -->
+    <div class="corner-decoration corner-top-left">🎄</div>
+    <div class="corner-decoration corner-top-right">❄️</div>
+    <div class="corner-decoration corner-bottom-left">🎁</div>
+    <div class="corner-decoration corner-bottom-right">⭐</div>
+
+    <!-- Большая новогодняя елка в левом нижнем углу -->
+    <div class="christmas-tree">🎄</div>
+
+    <!-- Сердечки по краям -->
+    <div class="side-hearts heart-left-1">❄️</div>
+    <div class="side-hearts heart-left-2">⭐</div>
+    <div class="side-hearts heart-left-3">✨</div>
+    <div class="side-hearts heart-left-4">🌟</div>
+    <div class="side-hearts heart-right-1">🎄</div>
+    <div class="side-hearts heart-right-2">🎁</div>
+    <div class="side-hearts heart-right-3">🌨️</div>
+    <div class="side-hearts heart-right-4">☃️</div>
+
+    <div class="main-layout">
+        <!-- Левая часть с интерактивным меню -->
+        <div class="left-section">
+            <!-- Главное сердце -->
+            <div class="main-heart" id="mainHeart">
+                <div class="heart-icon">❄️</div>
+                <div class="heart-text">Наша история</div>
+            </div>
+
+            <!-- Кнопки-воспоминания (скрыты изначально) -->
+            <div class="memory-buttons" id="memoryButtons">
+                <div class="memory-btn" data-memory="1" data-angle="0">
+                    <span class="memory-icon">💙</span>
+                </div>
+                <div class="memory-btn" data-memory="2" data-angle="36">
+                    <span class="memory-icon">💙</span>
+                </div>
+                <div class="memory-btn" data-memory="3" data-angle="72">
+                    <span class="memory-icon">💙</span>
+                </div>
+                <div class="memory-btn" data-memory="4" data-angle="108">
+                    <span class="memory-icon">💙</span>
+                </div>
+                <div class="memory-btn" data-memory="5" data-angle="144">
+                    <span class="memory-icon">💙</span>
+                </div>
+                <div class="memory-btn" data-memory="6" data-angle="180">
+                    <span class="memory-icon">💙</span>
+                </div>
+                <div class="memory-btn" data-memory="7" data-angle="216">
+                    <span class="memory-icon">💙</span>
+                </div>
+                <div class="memory-btn" data-memory="8" data-angle="252">
+                    <span class="memory-icon">💙</span>
+                </div>
+                <div class="memory-btn" data-memory="9" data-angle="288">
+                    <span class="memory-icon">💙</span>
+                </div>
+                <div class="memory-btn" data-memory="10" data-angle="324">
+                    <span class="memory-icon">❤️</span>
+                </div>
+            </div>
+
+            <!-- Романтичная фраза (появляется при клике на воспоминание) -->
+            <div class="romantic-phrase" id="romanticPhrase"></div>
+        </div>
+
+        <!-- Правая часть -->
+        <div class="right-section">
+            <!-- Список итогов года -->
+            <div class="year-summary">
+                <h2>С новым годом котенок ❄️</h2>
+                <div class="new-year-message">
+                    <p>Новый год для нас очень важный праздник. Именно в новый год мы начали встречаться ❄️</p>
+                    <p>За год произошло много событий и изменений. Мы улучшили отношения во многом. Хоть и сейчас у нас тяжелый период, я уверена что мы сможем его пройти в следующем году! ❄️</p>
+                    <p>В прошлом году ты был самым лучшим моим подарком, в этом году хочу что бы мы всегда были вместе</p>
+                </div>
+            </div>
+
+            <!-- Мини плеер -->
+            <div class="mini-player">
+                <h3>Наша песня 🎵</h3>
+                <div class="custom-player">
+                    <audio id="audioPlayer" preload="auto">
+                        <source src="audio/song.mp3" type="audio/mpeg">
+                        <source src="audio/song.wav" type="audio/wav">
+                        <source src="audio/song.ogg" type="audio/ogg">
+                    </audio>
+                    
+                    <div class="player-controls">
+                        <button id="playPauseBtn" class="control-btn">▶️</button>
+                        <div class="volume-control">
+                            <span class="volume-icon">🔊</span>
+                            <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider">
+                        </div>
+                    </div>
+                    
+                    <div class="song-info">
+                        <p id="songName">Наша любимая песня</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Модальные окна для воспоминаний -->
+    <div id="memory-modal-1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Первая встреча ❄️</h2>
+            <div class="memory-content">
+                <p>Именно с этого все началось, все дни мы стали ближе 💙❄️</p>
+                
+                <!-- Галерея фотографий -->
+                <div class="photo-gallery">
+                    <div class="gallery-images">
+                        <img src="img/1.jpg" alt="Фото 1" class="gallery-img active">
+                        <img src="img/2.jpg" alt="Фото 2" class="gallery-img">
+                        <img src="img/3.jpg" alt="Фото 3" class="gallery-img">
+                        <img src="img/4.jpg" alt="Фото 4" class="gallery-img">
+                        <img src="img/5.jpg" alt="Фото 5" class="gallery-img">
+                    </div>
+                    
+                    <!-- Управление галереей внизу -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="gallery1.prevImage()">‹</button>
+                        <div class="gallery-counter">
+                            <span id="currentImg1">1</span> / <span id="totalImg1">5</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="gallery1.nextImage()">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="memory-modal-2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Наше начало 💕</h2>
+            <div class="memory-content">
+                <p>наши милые моменты в начале 🌸✨</p>
+                
+                <!-- Галерея фотографий -->
+                <div class="photo-gallery">
+                    <div class="gallery-images">
+                        <img src="img/6.jpg" alt="Фото 6" class="gallery-img active">
+                        <img src="img/7.jpg" alt="Фото 7" class="gallery-img">
+                        <img src="img/8.jpg" alt="Фото 8" class="gallery-img">
+                        <img src="img/9.jpg" alt="Фото 9" class="gallery-img">
+                        <img src="img/10.jpg" alt="Фото 10" class="gallery-img">
+                    </div>
+                    
+                    <!-- Управление галереей внизу -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="gallery2.prevImage()">‹</button>
+                        <div class="gallery-counter">
+                            <span id="currentImg2">1</span> / <span id="totalImg2">5</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="gallery2.nextImage()">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="memory-modal-3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Наша совместная Жизнь ⭐</h2>
+            <div class="memory-content">
+                <p>Здесь мы уже начали жить вместе 🏠💕</p>
+                
+                <!-- Галерея фотографий -->
+                <div class="photo-gallery">
+                    <div class="gallery-images">
+                        <img src="img/11.jpg" alt="Фото 11" class="gallery-img active">
+                        <img src="img/12.jpg" alt="Фото 12" class="gallery-img">
+                        <img src="img/13.jpg" alt="Фото 13" class="gallery-img">
+                        <img src="img/14.jpg" alt="Фото 14" class="gallery-img">
+                        <img src="img/15.jpg" alt="Фото 15" class="gallery-img">
+                    </div>
+                    
+                    <!-- Управление галереей внизу -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="gallery3.prevImage()">‹</button>
+                        <div class="gallery-counter">
+                            <span id="currentImg3">1</span> / <span id="totalImg3">5</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="gallery3.nextImage()">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="memory-modal-4" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Наши недавние воспоминания 😌</h2>
+            <div class="memory-content">
+                <p>Тут мы много где были и часто проводили время вместе 🌍✨</p>
+                
+                <!-- Галерея фотографий -->
+                <div class="photo-gallery">
+                    <div class="gallery-images">
+                        <img src="img/16.jpg" alt="Фото 16" class="gallery-img active">
+                        <img src="img/17.jpg" alt="Фото 17" class="gallery-img">
+                        <img src="img/18.jpg" alt="Фото 18" class="gallery-img">
+                        <img src="img/19.jpg" alt="Фото 19" class="gallery-img">
+                        <img src="img/20.jpg" alt="Фото 20" class="gallery-img">
+                    </div>
+                    
+                    <!-- Управление галереей внизу -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="gallery4.prevImage()">‹</button>
+                        <div class="gallery-counter">
+                            <span id="currentImg4">1</span> / <span id="totalImg4">5</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="gallery4.nextImage()">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="memory-modal-5" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Наше Лето 🌟</h2>
+            <div class="memory-content">
+                <p>Здесь было мое самое счастливое лето ☀️💛</p>
+                
+                <!-- Галерея фотографий -->
+                <div class="photo-gallery">
+                    <div class="gallery-images">
+                        <img src="img/21.jpg" alt="Фото 21" class="gallery-img active">
+                        <img src="img/22.jpg" alt="Фото 22" class="gallery-img">
+                        <img src="img/23.jpg" alt="Фото 23" class="gallery-img">
+                        <img src="img/24.jpg" alt="Фото 24" class="gallery-img">
+                        <img src="img/25.jpg" alt="Фото 25" class="gallery-img">
+                    </div>
+                    
+                    <!-- Управление галереей внизу -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="gallery5.prevImage()">‹</button>
+                        <div class="gallery-counter">
+                            <span id="currentImg5">1</span> / <span id="totalImg5">5</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="gallery5.nextImage()">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="memory-modal-6" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Теплые вечера 🕯️</h2>
+            <div class="memory-content">
+                <p>На этих фотках было очень много событий которые поменяли наши отношения 💫🔄</p>
+                
+                <!-- Галерея фотографий -->
+                <div class="photo-gallery">
+                    <div class="gallery-images">
+                        <img src="img/26.jpg" alt="Фото 26" class="gallery-img active">
+                        <img src="img/27.jpg" alt="Фото 27" class="gallery-img">
+                        <img src="img/28.jpg" alt="Фото 28" class="gallery-img">
+                        <img src="img/29.jpg" alt="Фото 29" class="gallery-img">
+                        <img src="img/30.jpg" alt="Фото 30" class="gallery-img">
+                    </div>
+                    
+                    <!-- Управление галереей внизу -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="gallery6.prevImage()">‹</button>
+                        <div class="gallery-counter">
+                            <span id="currentImg6">1</span> / <span id="totalImg6">5</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="gallery6.nextImage()">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="memory-modal-7" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Наш Вайбик 🎊</h2>
+            <div class="memory-content">
+                <p>Наша с тобой атмосфера и любовь друг к другу 💕🌙</p>
+                
+                <!-- Галерея фотографий -->
+                <div class="photo-gallery">
+                    <div class="gallery-images">
+                        <img src="img/31.jpg" alt="Фото 31" class="gallery-img active">
+                        <img src="img/32.jpg" alt="Фото 32" class="gallery-img">
+                        <img src="img/33.jpg" alt="Фото 33" class="gallery-img">
+                        <img src="img/34.jpg" alt="Фото 34" class="gallery-img">
+                        <img src="img/35.jpg" alt="Фото 35" class="gallery-img">
+                    </div>
+                    
+                    <!-- Управление галереей внизу -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="gallery7.prevImage()">‹</button>
+                        <div class="gallery-counter">
+                            <span id="currentImg7">1</span> / <span id="totalImg7">5</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="gallery7.nextImage()">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="memory-modal-8" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Наши переписки 💬</h2>
+            <div class="memory-content">
+                <p>Это наши милые переписки в начале отношений, было классно и приятно общаться после работы или отвлекаться на перерыв ради того что бы ответить 📱💕</p>
+                
+                <!-- Галерея фотографий -->
+                <div class="photo-gallery">
+                    <div class="gallery-images">
+                        <img src="img/36.jpg" alt="Фото 36" class="gallery-img active">
+                        <img src="img/37.jpg" alt="Фото 37" class="gallery-img">
+                        <img src="img/38.jpg" alt="Фото 38" class="gallery-img">
+                        <img src="img/39.jpg" alt="Фото 39" class="gallery-img">
+                        <img src="img/40.jpg" alt="Фото 40" class="gallery-img">
+                    </div>
+                    
+                    <!-- Управление галереей внизу -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="gallery8.prevImage()">‹</button>
+                        <div class="gallery-counter">
+                            <span id="currentImg8">1</span> / <span id="totalImg8">5</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="gallery8.nextImage()">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="memory-modal-9" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Наши видео звонки 📹</h2>
+            <div class="memory-content">
+                <p>Наши видео звоночки, когда я не спала ночами перед работой или ложилась часов в 5, когда не замечали время от слова совсем 🌙💤</p>
+                
+                <!-- Галерея фотографий -->
+                <div class="photo-gallery">
+                    <div class="gallery-images">
+                        <img src="img/41.jpg" alt="Фото 41" class="gallery-img active">
+                        <img src="img/42.jpg" alt="Фото 42" class="gallery-img">
+                        <img src="img/43.jpg" alt="Фото 43" class="gallery-img">
+                        <img src="img/44.jpg" alt="Фото 44" class="gallery-img">
+                        <img src="img/45.jpg" alt="Фото 45" class="gallery-img">
+                    </div>
+                    
+                    <!-- Управление галереей внизу -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="gallery9.prevImage()">‹</button>
+                        <div class="gallery-counter">
+                            <span id="currentImg9">1</span> / <span id="totalImg9">5</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="gallery9.nextImage()">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="memory-modal-10" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Мои чувства к тебе ❤️</h2>
+            <div class="memory-content">
+                <p>Я очень рада что встретила тебя, ты показал мне заботу и любовь, научил говорить нет, проявлять заботу и показывать чувства, хоть и не до конца, но тебе я доверяю 💕✨</p>
+                
+                <!-- Галерея фотографий -->
+                <div class="photo-gallery">
+                    <div class="gallery-images">
+                        <img src="img/46.jpg" alt="Фото 46" class="gallery-img active">
+                        <img src="img/47.jpg" alt="Фото 47" class="gallery-img">
+                        <img src="img/48.jpg" alt="Фото 48" class="gallery-img">
+                        <img src="img/49.jpg" alt="Фото 49" class="gallery-img">
+                        <img src="img/50.jpg" alt="Фото 50" class="gallery-img">
+                        <img src="img/51.jpg" alt="Фото 51" class="gallery-img">
+                        <img src="img/51.jpg" alt="Фото 51" class="gallery-img">
+                    </div>
+                    
+                    <!-- Управление галереей внизу -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="gallery10.prevImage()">‹</button>
+                        <div class="gallery-counter">
+                            <span id="currentImg10">1</span> / <span id="totalImg10">6</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="gallery10.nextImage()">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

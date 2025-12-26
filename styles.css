@@ -1,0 +1,1378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+    height: 100vh;
+    overflow: hidden;
+    color: #1565c0;
+    position: relative;
+}
+
+/* Дополнительные летающие элементы - ТОЛЬКО ФОНОВЫЕ */
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0; /* Понижаем z-index чтобы были за всем */
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 16px;
+    opacity: 0.1; /* Делаем еще более прозрачными */
+    animation: floatUp 20s linear infinite; /* Замедляем анимацию */
+}
+
+.floating-heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-heart:nth-child(2) { left: 20%; animation-delay: 2s; }
+.floating-heart:nth-child(3) { left: 30%; animation-delay: 4s; }
+.floating-heart:nth-child(4) { left: 40%; animation-delay: 6s; }
+.floating-heart:nth-child(5) { left: 50%; animation-delay: 8s; }
+.floating-heart:nth-child(6) { left: 60%; animation-delay: 10s; }
+.floating-heart:nth-child(7) { left: 70%; animation-delay: 12s; }
+.floating-heart:nth-child(8) { left: 80%; animation-delay: 14s; }
+.floating-heart:nth-child(9) { left: 90%; animation-delay: 16s; }
+.floating-heart:nth-child(10) { left: 15%; animation-delay: 18s; }
+.floating-heart:nth-child(11) { left: 75%; animation-delay: 20s; }
+.floating-heart:nth-child(12) { left: 35%; animation-delay: 22s; }
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ - ПОЛНОСТЬЮ УБИРАЕМ ИЗ ОСНОВНЫХ ЗОН */
+.decorative-elements {
+    display: none; /* Временно отключаем все декоративные элементы */
+}
+
+@keyframes gentleFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.4;
+    }
+    50% { 
+        transform: translateY(-15px) rotate(5deg);
+        opacity: 0.6;
+    }
+}
+
+/* РОМАНТИЧЕСКИЕ ЦИТАТЫ - ОТКЛЮЧЕНЫ */
+.romantic-quotes {
+    display: none; /* Полностью убираем цитаты */
+}
+
+@keyframes quoteFade {
+    0%, 20%, 80%, 100% { 
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    40%, 60% { 
+        opacity: 0.7;
+        transform: scale(1);
+    }
+}
+
+/* ПЛАВАЮЩИЕ ЛЕПЕСТКИ РОЗ - ТОЛЬКО В ЛЕВОЙ ЧАСТИ */
+.rose-petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.petal {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    animation: petalFall 12s linear infinite;
+}
+
+.petal-1 { left: 15%; animation-delay: 0s; }
+.petal-2 { left: 25%; animation-delay: 3s; }
+.petal-3 { left: 35%; animation-delay: 6s; }
+.petal-4 { left: 45%; animation-delay: 9s; }
+
+@keyframes petalFall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Декоративные элементы в углах - ТОЛЬКО В САМЫХ УГЛАХ */
+.corner-decoration {
+    position: fixed;
+    font-size: 20px;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.corner-top-left {
+    top: 5px;
+    left: 5px;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.corner-top-right {
+    top: 5px;
+    right: 5px;
+    animation: pulse 3s ease-in-out infinite 1s;
+}
+
+.corner-bottom-left {
+    bottom: 5px;
+    left: 5px;
+    animation: pulse 3s ease-in-out infinite 2s;
+}
+
+.corner-bottom-right {
+    bottom: 5px;
+    right: 5px;
+    animation: pulse 3s ease-in-out infinite 3s;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1);
+        opacity: 0.2;
+    }
+    50% { 
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+}
+
+/* Дополнительные сердечки по краям - ОТКЛЮЧЕНЫ */
+.side-hearts {
+    display: none; /* Полностью убираем боковые сердечки */
+}
+
+@keyframes sway {
+    0%, 100% { transform: translateX(0px) rotate(0deg); }
+    25% { transform: translateX(10px) rotate(5deg); }
+    75% { transform: translateX(-10px) rotate(-5deg); }
+}
+
+/* Заголовок с подзаголовком */
+.header {
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(21, 101, 192, 0.3);
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    color: #1565c0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: headerGlow 3s ease-in-out infinite;
+    margin-bottom: 5px;
+    font-family: 'Georgia', serif;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #1976d2;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+@keyframes headerGlow {
+    0%, 100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); }
+    50% { text-shadow: 2px 2px 20px rgba(21, 101, 192, 0.5); }
+}
+
+/* Основной макет */
+.main-layout {
+    display: flex;
+    height: calc(100vh - 90px);
+    max-height: calc(100vh - 90px);
+    gap: 15px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+/* Левая секция с интерактивным меню */
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 500px;
+    margin-right: 100px;
+}
+
+/* ГЛАВНОЕ СЕРДЦЕ - НОВОГОДНЯЯ ТЕМАТИКА */
+.main-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #64b5f6, #1976d2, #0d47a1);
+    border: 4px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(21, 101, 192, 0.4);
+    animation: heartPulse 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.main-heart:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 15px 40px rgba(21, 101, 192, 0.6);
+}
+
+.heart-icon {
+    font-size: 3.5rem;
+    margin-bottom: 8px;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+.heart-text {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text-align: center;
+    line-height: 1.1;
+}
+
+@keyframes heartPulse {
+    0%, 100% { 
+        box-shadow: 0 10px 30px rgba(21, 101, 192, 0.4);
+    }
+    50% { 
+        box-shadow: 0 15px 40px rgba(21, 101, 192, 0.7);
+    }
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* КНОПКИ-ВОСПОМИНАНИЯ - УВЕЛИЧЕННОЕ РАССТОЯНИЕ */
+.memory-buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    pointer-events: none;
+}
+
+.memory-btn {
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    background: linear-gradient(135deg, rgba(187, 222, 251, 0.9), rgba(144, 202, 249, 0.9));
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(21, 101, 192, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    pointer-events: none;
+    backdrop-filter: blur(10px);
+}
+
+.memory-btn.show {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+    pointer-events: auto;
+    animation: memoryAppear 0.6s ease-out forwards;
+}
+
+.memory-btn:hover {
+    transform: scale(1.15) rotate(360deg);
+    box-shadow: 0 12px 35px rgba(21, 101, 192, 0.5);
+    background: linear-gradient(135deg, #64b5f6, #1976d2);
+}
+
+.memory-icon {
+    font-size: 2.5rem;
+}
+
+.memory-text {
+    display: none;
+}
+
+@keyframes memoryAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.2) rotate(180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+/* РОМАНТИЧНАЯ ФРАЗА */
+.romantic-phrase {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #1976d2;
+    border-radius: 20px;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    color: #0d47a1;
+    font-style: italic;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(21, 101, 192, 0.3);
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    transition: all 0.5s ease;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+.romantic-phrase.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* АНИМАЦИЯ ГЛАВНОГО СЕРДЦА ПРИ АКТИВАЦИИ */
+.main-heart.activated {
+    animation: heartActivate 1s ease-out forwards;
+}
+
+@keyframes heartActivate {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -60%) scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* Правая секция */
+.right-section {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: fit-content;
+    max-height: calc(100vh - 150px);
+    overflow-y: visible;
+    padding: 5px;
+    align-items: flex-end;
+    position: absolute;
+    right: 10px;
+    top: 95px;
+}
+
+/* Список итогов года */
+.year-summary {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid #1976d2;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(21, 101, 192, 0.2);
+    width: 280px;
+    height: fit-content;
+}
+
+.year-summary h2 {
+    color: #1976d2;
+    margin: 0 0 12px 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.new-year-message {
+    margin: 0;
+    padding: 0;
+}
+
+.new-year-message p {
+    font-size: 11px;
+    color: #1565c0;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+    text-align: left;
+}
+
+.new-year-message p:last-child {
+    margin-bottom: 0;
+}
+
+.year-summary ul {
+    list-style: none;
+}
+
+.year-summary li {
+    padding: 3px 0;
+    font-size: 10px;
+    color: #1565c0;
+    border-bottom: 1px solid rgba(21, 101, 192, 0.1);
+    transition: all 0.3s ease;
+}
+
+.year-summary li:hover {
+    color: #1976d2;
+    transform: translateX(2px);
+}
+
+.year-summary li:last-child {
+    border-bottom: none;
+}
+
+/* Мини плеер */
+.mini-player {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid #1976d2;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 4px 15px rgba(21, 101, 192, 0.2);
+    width: 280px;
+    height: fit-content;
+}
+
+.mini-player h3 {
+    color: #1976d2;
+    margin: 0 0 8px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.load-btn {
+    background: linear-gradient(135deg, #bbdefb, #90caf9);
+    border: 2px solid #1976d2;
+    color: #1976d2;
+    padding: 6px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: 10px;
+}
+
+.load-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(21, 101, 192, 0.3);
+    background: linear-gradient(135deg, #90caf9, #64b5f6);
+    color: #fff;
+}
+
+.custom-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, #64b5f6, #1976d2);
+    border: 2px solid #1976d2;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(21, 101, 192, 0.3);
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(21, 101, 192, 0.5);
+}
+
+.play-icon {
+    font-size: 16px;
+    color: #fff;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+}
+
+.volume-icon {
+    font-size: 14px;
+}
+
+.volume-slider {
+    flex: 1;
+    height: 4px;
+    background: rgba(25, 118, 210, 0.3);
+    border-radius: 2px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #1976d2;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #1976d2;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.progress-container {
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(25, 118, 210, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #64b5f6, #1976d2);
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+.time-display {
+    font-size: 9px;
+    color: #1565c0;
+    text-align: center;
+}
+
+.player-controls audio {
+    width: 100%;
+    margin-bottom: 5px;
+    height: 35px;
+}
+
+.song-info {
+    text-align: center;
+    color: #1565c0;
+    font-size: 9px;
+    margin: 0;
+}
+
+.song-info p {
+    margin: 0;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 101, 192, 0.8);
+    backdrop-filter: blur(5px);
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+    background: linear-gradient(135deg, rgba(227, 242, 253, 0.95), rgba(187, 222, 251, 0.95));
+    backdrop-filter: blur(15px);
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #1976d2;
+    width: 90%;
+    max-width: 700px;
+    height: 85vh;
+    max-height: 85vh;
+    overflow: hidden;
+    animation: modalSlideIn 0.4s ease;
+    box-shadow: 0 20px 40px rgba(21, 101, 192, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+    from { 
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #1976d2;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #0d47a1;
+    transform: rotate(90deg);
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #1976d2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content p {
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #1565c0;
+}
+
+/* Плейсхолдеры для изображений */
+.image-placeholder {
+    width: 100%;
+    height: 150px;
+    background: rgba(187, 222, 251, 0.3);
+    border: 2px dashed #1976d2;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: #1976d2;
+    transition: all 0.3s ease;
+}
+
+.image-placeholder:hover {
+    background: rgba(187, 222, 251, 0.5);
+    border-color: #0d47a1;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.photo-placeholder {
+    text-align: center;
+}
+
+.photo-placeholder .image-placeholder {
+    height: 120px;
+    font-size: 2rem;
+}
+
+.contact-info {
+    background: rgba(187, 222, 251, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid #1976d2;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: #4a4a4a;
+}
+
+/* ПРАВИЛЬНАЯ АДАПТИВНОСТЬ */
+
+/* Большие экраны (1400px+) - увеличиваем элементы */
+@media (min-width: 1400px) {
+    .main-heart {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .heart-icon {
+        font-size: 4rem;
+    }
+    
+    .heart-text {
+        font-size: 1.2rem;
+    }
+    
+    .memory-buttons {
+        width: 480px;
+        height: 480px;
+    }
+    
+    .memory-btn {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .memory-icon {
+        font-size: 1.8rem;
+    }
+    
+    .memory-text {
+        font-size: 0.75rem;
+    }
+}
+
+/* Средние экраны (1200-1400px) - стандартные размеры остаются */
+
+/* Планшеты горизонтально (1024-1200px) */
+@media (max-width: 1200px) {
+    .main-layout {
+        gap: 15px;
+        padding: 8px;
+    }
+    
+    .right-section {
+        flex: 0 0 220px;
+    }
+    
+    .main-heart {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .heart-icon {
+        font-size: 3rem;
+    }
+    
+    .heart-text {
+        font-size: 1rem;
+    }
+    
+    .memory-buttons {
+        width: 420px;
+        height: 420px;
+    }
+    
+    .memory-btn {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .memory-icon {
+        font-size: 1.7rem;
+    }
+    
+    .memory-text {
+        font-size: 0.7rem;
+    }
+}
+
+/* Планшеты вертикально (768-1024px) */
+@media (max-width: 1024px) {
+    body {
+        overflow-y: auto;
+        height: auto;
+    }
+    
+    .main-layout {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        gap: 20px;
+    }
+    
+    .left-section {
+        min-height: 450px;
+        order: 1;
+    }
+    
+    .right-section {
+        flex: none;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        flex-direction: row;
+        gap: 20px;
+        order: 2;
+    }
+    
+    .year-summary, .mini-player {
+        flex: 1;
+    }
+    
+    .main-heart {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .heart-icon {
+        font-size: 2.5rem;
+    }
+    
+    .heart-text {
+        font-size: 0.9rem;
+    }
+    
+    .memory-buttons {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .memory-btn {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .memory-icon {
+        font-size: 1.4rem;
+    }
+    
+    .memory-text {
+        font-size: 0.6rem;
+    }
+    
+    /* Скрываем часть декораций на планшетах */
+    .deco-element:nth-child(even) {
+        display: none;
+    }
+}
+
+/* Мобильные устройства (480-768px) */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .main-layout {
+        padding: 8px;
+        gap: 15px;
+    }
+    
+    .left-section {
+        min-height: 350px;
+    }
+    
+    .right-section {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    
+    .main-heart {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .heart-icon {
+        font-size: 2.5rem;
+    }
+    
+    .heart-text {
+        font-size: 0.9rem;
+    }
+    
+    .memory-buttons {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .memory-btn {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .memory-icon {
+        font-size: 1.1rem;
+    }
+    
+    .memory-text {
+        font-size: 0.5rem;
+        line-height: 0.9;
+    }
+    
+    .year-summary {
+        padding: 10px;
+    }
+    
+    .year-summary h2 {
+        font-size: 0.9rem;
+    }
+    
+    .year-summary li {
+        font-size: 9px;
+    }
+    
+    .mini-player {
+        padding: 8px;
+    }
+    
+    .mini-player h3 {
+        font-size: 0.8rem;
+    }
+    
+    .load-btn {
+        font-size: 9px;
+        padding: 5px 10px;
+    }
+    
+    .romantic-phrase {
+        bottom: 20px;
+        font-size: 0.9rem;
+        max-width: 280px;
+        padding: 10px 15px;
+    }
+    
+    /* Скрываем большинство декораций на мобильных */
+    .decorative-elements {
+        display: none;
+    }
+    
+    .romantic-quotes {
+        display: none;
+    }
+    
+    .rose-petals {
+        display: none;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 15px;
+    }
+}
+
+/* Маленькие мобильные (320-480px) */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .left-section {
+        min-height: 280px;
+    }
+    
+    .main-heart {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .heart-icon {
+        font-size: 2rem;
+    }
+    
+    .heart-text {
+        font-size: 0.8rem;
+    }
+    
+    .memory-buttons {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .memory-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .memory-icon {
+        font-size: 0.9rem;
+    }
+    
+    .memory-text {
+        font-size: 0.45rem;
+    }
+    
+    .year-summary {
+        padding: 8px;
+    }
+    
+    .year-summary h2 {
+        font-size: 0.8rem;
+    }
+    
+    .year-summary li {
+        font-size: 8px;
+    }
+    
+    .mini-player {
+        padding: 6px;
+    }
+    
+    .mini-player h3 {
+        font-size: 0.7rem;
+    }
+    
+    .load-btn {
+        font-size: 8px;
+        padding: 4px 8px;
+    }
+    
+    .romantic-phrase {
+        bottom: 15px;
+        font-size: 0.8rem;
+        max-width: 220px;
+        padding: 8px 12px;
+    }
+    
+    .side-hearts {
+        font-size: 12px;
+    }
+    
+    .corner-decoration {
+        font-size: 20px;
+    }
+    
+    .modal-content {
+        width: 98%;
+        margin: 2% auto;
+        padding: 12px;
+    }
+}
+
+/* Кастомный плеер */
+.custom-player {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, #64b5f6, #1976d2);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(21, 101, 192, 0.4);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+}
+
+.volume-icon {
+    font-size: 14px;
+}
+
+.volume-slider {
+    flex: 1;
+    height: 4px;
+    background: rgba(21, 101, 192, 0.3);
+    border-radius: 2px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #1976d2;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #1976d2;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.custom-player .song-info {
+    text-align: center;
+    color: #1565c0;
+    font-size: 9px;
+    margin: 0;
+}
+
+.custom-player .song-info p {
+    margin: 0;
+}
+/* Большая новогодняя елка в левом нижнем углу */
+.christmas-tree {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 120px;
+    opacity: 0.6;
+    z-index: 2;
+    pointer-events: none;
+    animation: treeGlow 4s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+@keyframes treeGlow {
+    0%, 100% { 
+        opacity: 0.6;
+        transform: scale(1);
+        text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+    }
+    50% { 
+        opacity: 0.8;
+        transform: scale(1.05);
+        text-shadow: 0 0 30px rgba(76, 175, 80, 0.8);
+    }
+}
+/* Галерея фотографий */
+.photo-gallery {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.gallery-images {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    min-height: 300px;
+}
+
+.gallery-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.gallery-img.active {
+    opacity: 1;
+}
+
+.gallery-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    flex-shrink: 0;
+}
+
+.gallery-btn {
+    background: linear-gradient(135deg, #64b5f6, #1976d2);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-btn:hover {
+    background: linear-gradient(135deg, #1976d2, #0d47a1);
+    transform: scale(1.1);
+}
+
+.gallery-counter {
+    color: #1565c0;
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #1976d2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.modal-content p {
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+    color: #1565c0;
+    text-align: center;
+    flex-shrink: 0;
+}
+/* Подсказка про красное сердечко */
+.red-heart-hint {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #1976d2;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #1565c0;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(21, 101, 192, 0.3);
+    backdrop-filter: blur(10px);
+    animation: hintPulse 2s ease-in-out infinite;
+    z-index: 1000;
+}
+
+.red-heart-hint p {
+    margin: 0;
+    font-size: 14px;
+    color: #1565c0;
+}
+
+@keyframes hintPulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(21, 101, 192, 0.3);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(21, 101, 192, 0.5);
+    }
+}
+
+/* Адаптивность для подсказки */
+@media (max-width: 768px) {
+    .red-heart-hint {
+        top: 140px;
+        left: 15px;
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+    
+    .red-heart-hint p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .red-heart-hint {
+        top: 135px;
+        left: 10px;
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+    
+    .red-heart-hint p {
+        font-size: 11px;
+    }
+}
