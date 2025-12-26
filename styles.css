@@ -1479,6 +1479,14 @@ body {
     backdrop-filter: blur(10px);
     animation: hintPulse 2s ease-in-out infinite;
     z-index: 1000;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Скрываем подсказку когда кнопки активны */
+.red-heart-hint.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
 }
 
 .red-heart-hint p {
@@ -1499,10 +1507,23 @@ body {
 }
 
 /* Адаптивность для подсказки */
+@media (max-width: 1024px) {
+    .red-heart-hint {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 10px auto 20px auto;
+        width: fit-content;
+    }
+}
+
 @media (max-width: 768px) {
     .red-heart-hint {
-        top: 140px;
-        left: 15px;
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 10px auto 15px auto;
+        width: fit-content;
         font-size: 12px;
         padding: 8px 15px;
     }
@@ -1514,10 +1535,9 @@ body {
 
 @media (max-width: 480px) {
     .red-heart-hint {
-        top: 135px;
-        left: 10px;
         font-size: 11px;
         padding: 6px 12px;
+        margin: 8px auto 12px auto;
     }
     
     .red-heart-hint p {
